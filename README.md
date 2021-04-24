@@ -19,32 +19,28 @@ BruteForcer is a program that uses rfpwnon.py which is writing by ExploitAgency.
 In this installation, I would assume you have a freshly installed Kali or Ubuntu. So, I would go through every necessary package that needs to be installed. If your operating system has some packages installed, it’s no harm to install them again just to make sure everything is working properly.
 Note that all the following commands are run as a superuser. To run commands as superuser, write the following command in the terminal, ``` sudo su ``` ten write your password.
 ### Requirements Before Installing Rfcat.
-1. curl
 ```
+# curl
 $ apt-get install curl
-```
-2. git
-```
-$ sudo apt install git
-```
-3. Development tools
-```
-$ apt install build-essential
-```
-4. libusb-1.0-0
-```
-$ sudo apt-get install libusb-1.0-0
-```
-5. pip3
-```
-$ sudo apt install python3-pip
-```
-6. PySide2
 
-```
+# git
+$ sudo apt install git
+
+# Development tools
+$ apt install build-essential
+
+# libusb-1.0-0
+$ sudo apt-get install libusb-1.0-0
+
+# pip3
+$ sudo apt install python3-pip
+
+# PySide2
 $ pip install PySide2
-```
-7. pyusb
-```
+
+# pyusb
 $ pip install pyusb
+
+# python3 packages
+$ sudo apt install -y python3-pip python3-usb
 ```
