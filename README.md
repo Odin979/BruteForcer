@@ -86,7 +86,19 @@ $ rfcat -h
 ```
 
 ## What Do You Need to Know Before Conducting the Brute Force Attack?
-To conduct a brute force attack on a garage door opener, you need to know three things. These things are the frequency, baud rate, and how many bits the transmitter is using. 
+To conduct a brute force attack on a garage door opener, you need to know few things. These things are the nature of the attack, bit shif register, frequency, baud rate, and how many bits the transmitter is using. 
+
+### Nature of the Attack
+Brute force attacks involve trying every possible passphrase until getting the correct one. To explain it clearly, let’s assume that we have a password with two characters, and each character is either 1 or 0. To count the possible combinations, we need to calculate 2 to the 2nd power, which is four possible combinations. These combinations are 00, 01, 10,11. So, to brute force a 2-bit password, we will try these four combinations. In garage door openers, these characters are called bits, and they can be either 1 or 0. Almost all garage door openers are using 8-bit to 12-bit code. By applying the same formula above, we can conclude that the number of possible combinations is from 256 to 4096. So, the attack I will be conducting will involve writing a Python code that can go through all the possible combinations in less than 3 minutes. All the signals will be transmitted using a USB dongle called YARD Stick One, which is a sub-1 GHz transmitter. 
+
+### Bit Shift Register
+Most garage door receivers use something called a bit shift register, which works by taking a bit array and shifting it by one position to compare it with the correct password (“Shift register,” 2018). To explain this even more, assume we have a 5-bit code, and it is 01101. If we send an 8-bit code that is 11011011, the receiver will not throw it away as an incorrect code. However, it will analyze it using the shift register technique. This is how it will analyze it:
+* **11011**011 – Incorrect *nothing will happen*
+* 1**10110**11 - Incorrect *nothing will happen*
+* 11**01101**1 – Correct *the door will open*
+* 110**11011** - Incorrect *nothing will happen*
+
+So, it doesn’t really matter how many bits you send unless it contains the correct code within it. Also, the hacker doesn’t need to know how many bits a garage door opener is using. They can just send a 12-bit code, and it will open all garages that use 8, 9, 10, 11, and 12-bit. This system is vulnerable to so many types of attacks, yet it is still used in many households worldwide.  
 
 ### Knowing the Frequency
 <img align="right" src="https://user-images.githubusercontent.com/78453901/115947862-8f3c2580-a498-11eb-8306-d425690fa1bf.jpg">
@@ -100,4 +112,4 @@ Baud rate is how long each pulse in a signal. For example, a 10-bit code has 10 
 ### Knowing How Many Bits
 This part is going to be the easiest. As I explained earlier, garage door receivers use a bit shift register. That’s means if the garage you want to open is 8-bit, sending a 12-bit code would still open it. Since all garage openers containing DIP switches range from 8-bit to 12-bit, sending a 12-bit code would open every 8, 9, 10, 11, and 12-bit garage door. Note that every time the bits increase, the time for running all possible codes increases to. However, it is not that long to go through all the possible codes. A 12-bit code has two possible values for each bit, either 1 or 0. So, the total possible combinations are 2^12, which is 4096 possible combinations. Since we will be sending each code four times to ensure the receiver will capture it, that means the total codes we are sending is 16,384. If we send all these codes with a baud rate of 2400, it takes approximately 4.5 minutes. The time would decrease even more every time the baud rate increase. 
 
-### Conducting the Brute Force Attack
+## Conducting the Brute Force Attack
