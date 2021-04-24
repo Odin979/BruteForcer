@@ -93,10 +93,10 @@ Brute force attacks involve trying every possible passphrase until getting the c
 
 ### Bit Shift Register
 Most garage door receivers use something called a bit shift register, which works by taking a bit array and shifting it by one position to compare it with the correct password (“Shift register,” 2018). To explain this even more, assume we have a 5-bit code, and it is 01101. If we send an 8-bit code that is 11011011, the receiver will not throw it away as an incorrect code. However, it will analyze it using the shift register technique. This is how it will analyze it:
-* **11011**011 – Incorrect *nothing will happen*
-* 1**10110**11 - Incorrect *nothing will happen*
-* 11**01101**1 – Correct *the door will open*
-* 110**11011** - Incorrect *nothing will happen*
+* ***11011***011 – Incorrect *nothing will happen*
+* 1***10110***11 - Incorrect *nothing will happen*
+* 11***01101***1 – Correct *the door will open*
+* 110***11011*** - Incorrect *nothing will happen*
 
 So, it doesn’t really matter how many bits you send unless it contains the correct code within it. Also, the hacker doesn’t need to know how many bits a garage door opener is using. They can just send a 12-bit code, and it will open all garages that use 8, 9, 10, 11, and 12-bit. This system is vulnerable to so many types of attacks, yet it is still used in many households worldwide.  
 
