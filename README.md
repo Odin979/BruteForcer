@@ -1,6 +1,21 @@
 # BruteForcer
 
 BruteForcer is a program that uses rfpwnon.py, which is written by ExploitAgency. The two rfpwnon codes have been slightly modified to make them compatible with Python3 and to include the features included in the BruteForcer tool. 
+
+## Table of Contents
+* [Features](#features)
+* [Requirements](#requirements)
+* [Tutorial](#tutorial)
+  * [Requirements Before Installing Rfcat](#requirements-before-installing-rfcat)
+  * [SDCC-libraries](#sdcc-libraries)
+  * [Installing RfCat](#installing-rfcat)
+* [What Do You Need to Know Before Conducting the Brute Force Attack?](#what-do-you-need-to-know-before-conducting-the-brute-force-attack)
+  * [Nature of the Attack](#nature-of-the-attack)
+  * [Bit Shift Register](#bit-shift-register)
+  * [Knowing the Frequency](#knowing-the-frequency)
+  * [Knowing the Baud Rate](#knowing-the-baud-rate)
+  * [Knowing How Many Bits](#knowing-how-many-bits)
+* [Conducting the Brute Force Attack](#conducting-the-brute-force-attack)
 ## Features
 * Uses Graphical User Interface (GUI).
 * Can brute force all frequencies and baud rates with one click of a button. 
@@ -18,7 +33,7 @@ BruteForcer is a program that uses rfpwnon.py, which is written by ExploitAgency
 ## Tutorial
 In this installation, I would assume you have a freshly installed Kali or Ubuntu. So, I would go through every necessary package that needs to be installed. If your operating system has some packages installed, it’s no harm to install them again just to make sure everything is working properly.
 Note that all the following commands are run as a superuser. To run commands as superuser, write the following command in the terminal, ``` sudo su ``` Then write your password.
-### Requirements Before Installing Rfcat.
+### Requirements Before Installing Rfcat
 ```
 # curl
 $ apt-get install curl
@@ -105,7 +120,7 @@ So, it doesn’t really matter how many bits you send unless it contains the cor
 First, knowing the frequency used by the remote. If you have access to the remote or the receiver you want to attack, you can look at the label in the back of the device. What we are looking for is an FCC ID. 
 Using this website: https://fccid.io/ you can type the FCC ID in the search area, and it will get you the frequency for that device. However, guessing the frequency isn’t that hard. Almost all garage door transmitter uses a range from 300 MHz – 390 MHz. That doesn’t mean you will have to try all the 90 MHz in between. Actually, there are only a few frequencies that you can guess in order to get the right one. According to the Garage Door Guide website, the most common frequencies are 300 MHz, 310 MHz, 315 MHz, 318 MHz, and 390 MHz (“Program garage door remotes,” 2019). So, it is only five frequencies that you can try in order to open any garage. !
 
-### Knowing the Baud Rate.
+### Knowing the Baud Rate
 <img align="right" src="https://user-images.githubusercontent.com/78453901/115948004-8009a780-a499-11eb-83c3-cdf02758e53f.png">
 Baud rate is how long each pulse in a signal. For example, a 10-bit code has 10 pulses, and the baud rate is represented by how long each pulse lasts. If we assumed that the baud rate is 4800, that means it takes 1/4800 second for every bit. The following figure is a screenshot I took comparing two similar signals with different baud rates. The two baud rates are 2400 and 4800. You can clearly see that the pulse length in the 2400 signal is double the length of the 4800 signal. Getting the correct baud rate is extremely important for the garage to open. Receivers listen first to how long the pulse is. If it is too short or too long, the receiver will stop listening to that signal. However, you don’t need to capture a garage remote’s signal to determine the baud rate. Almost all garage door remotes are using either 1200, 2400, or 4800. So, trying these three configurations would get the door open no doubt. 
 
