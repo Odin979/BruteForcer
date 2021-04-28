@@ -2,6 +2,10 @@
 
 BruteForcer is a program that uses rfpwnon.py, which is written by ExploitAgency. The two rfpwnon codes have been slightly modified to make them compatible with Python3 and to include the features included in the BruteForcer tool. 
 
+The BruteForcer Tool is made by Abdullah Alawdan for my Cyber Security project called "Brute Force Attack on Garage Door Openers"
+Click on the link below to watch the video presentation.
+[![Brute Force Attack on Garage Door Openers](https://user-images.githubusercontent.com/78453901/116377114-db5fd080-a7de-11eb-84a0-c6d0aa6cac16.JPG)](https://www.youtube.com/watch?v=n3DoE_W_a_8)
+
 ## Table of Contents
 * [Features](#features)
 * [Requirements](#requirements)
@@ -129,3 +133,9 @@ This part is going to be the easiest. As I explained earlier, garage door receiv
 
 ## Conducting the Brute Force Attack
 First, make sure your YARD Stick One is connected, then change directory to where you saved all the python codes. After that type ```python3 BruteForcer.py``` and the program will open. You will have two options here. First, is to select the options you want and click "Brute Force". That will initiate an attack on the specified options. Second, is to initiate an attack on all possible frequencies  and baud rates by clicking on "Brute Everything." This way you don't need to specify the frequency or the baud rate because all that would be done for you. You will only have the option of selecting the bit length and repeating time. If you don't select any of that, bit length will be defaulted to 12 and repeating times to 4. The process can take a long time depending on your computer processing power. Below is a picture of the program's interface. ![Capture](https://user-images.githubusercontent.com/78453901/116371387-5de59180-a7d9-11eb-89ae-e2e152eebebd.JPG)
+
+When you initiate the attack using “Brute Force” button, another page will pop up (image 1) showing what frequency you are transmitting at and what codes you are transmitting. If you used “Brute Everything” button, two pages will pop up. The first one will be similar to image number one, the second one (image 2) will be a progress page telling you what frequency and baud rate is transmitted right now and what frequency and baud rate that finished transmitting. 
+
+
+![image1](https://user-images.githubusercontent.com/78453901/116376160-fb42c480-a7dd-11eb-8858-eca08c86181c.png)
+![image2](https://user-images.githubusercontent.com/78453901/116375306-2842a780-a7dd-11eb-94e0-882b04798bc0.png)
